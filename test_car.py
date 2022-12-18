@@ -2,11 +2,12 @@ import sklearn
 from sklearn.utils import shuffle
 from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
-import numpy as np
+import seaborn as sns
 from sklearn import linear_model, preprocessing
-import matplotlib.pyplot as pyplot
-import pickle
-from matplotlib import style
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.colors import ListedColormap
+from sklearn import neighbors, datasets
 
 data = pd.read_csv('car.data')
 
@@ -49,3 +50,12 @@ for x in range(len(predicted)):
     print('Predicted: ', names[predicted[x]], 'Data: ', x_test[x], 'Actual: ', names[y_test[x]])
     #n = model.kneighbors([x_test[x]], 9, True)
     #print("N: ", n) #better not do with matplotlib
+
+
+'''
+p = 'persons'
+style.use('ggplot')
+pyplot.scatter(data[p],data['buying'])
+pyplot.xlabel(p)
+pyplot.ylabel('Final Grade')
+pyplot.show()'''
